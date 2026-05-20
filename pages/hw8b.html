@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Story</title>
 
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .story-box {
+            max-width: 700px;
+            margin: auto;
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255,255,255,0.2);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="story-box">
+
+        <h1 id="title">The Beginning</h1>
+
+        <img id="storyImage" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Story Image">
+
+        <p id="storyText">
+            You wake up alone in a dark forest. The wind blows through the trees and you hear footsteps nearby.
+            You need to decide what to do next.
+        </p>
+
+        <div id="choices">
+            <button onclick="forestPath()">Follow the footsteps</button>
+            <button onclick="hidePath()">Hide behind a tree</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        function forestPath() {
+            document.getElementById("title").innerHTML = "The Stranger";
+
+            document.getElementById("storyImage").src =
+            "https://images.unsplash.com/photo-1511497584788-876760111969";
+
+            document.getElementById("storyText").innerHTML =
+            "You follow the footsteps and discover a mysterious stranger standing beside a campfire. The stranger offers you food and asks if you want to travel together.";
+
+            document.getElementById("choices").innerHTML = `
+                <button onclick="trustStranger()">Trust the stranger</button>
+                <button onclick="walkAway()">Walk away</button>
+            `;
+        }
+
+        function hidePath() {
+            document.getElementById("title").innerHTML = "Hidden Danger";
+
+</html>
